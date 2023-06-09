@@ -1,12 +1,11 @@
 // import logo from './logo.svg';
-import React, {useState} from 'react';
+import React, { useState } from "react";
 import Expenses from "./components/expenses";
 import NewExpense from "./components/NewExpense";
-import ExpensesFilter from "./components/ExpensesFilter";  
+import ExpensesFilter from "./components/ExpensesFilter";
 import "./App.css";
 // import ExpenseDate from "./components/ExpenseDate";
 // import ExpenseItem from "./components/ExpenseItem";
-
 
 const Dummy_expenses = [
   {
@@ -33,15 +32,15 @@ const Dummy_expenses = [
 function App() {
   const [expenses, setExpenses] = useState(Dummy_expenses);
 
-  const expenseDataHandler = (expense)=>{
-  setExpenses ((prevExpenses) =>{
-  return [expense, ...prevExpenses]
-  });
-};
+  const expenseDataHandler = (expense) => {
+    setExpenses((prevExpenses) => {
+      return [expense, ...prevExpenses];
+    });
+  };
   {
     const expense = {
       ...expenseDataHandler,
-      id: expenses.length.toString()
+      id: expenses.length.toString(),
     };
     console.log(expense);
   }
@@ -49,7 +48,7 @@ function App() {
   return (
     <div className="App">
       <h1>Expenses</h1>
-      <NewExpense onExpenseData={expenseDataHandler}/>
+      <NewExpense onExpenseData={expenseDataHandler} />
       <Expenses items={expenses} />
     </div>
   );
