@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./Expenses.css";
 import Card from "./Card";
+import ExpensesChart from "./expensesChart";
 // import ExpenseItem from "./ExpenseItem";
 import ExpensesList from "./expensesList";
 import ExpensesFilter from "./ExpensesFilter";
@@ -35,6 +36,7 @@ function Expenses(props) {
     <div>
       <Card className="expenses">
         <ExpensesFilter selected={selectYear} onYearChange={handelChangeYear} />
+        <ExpensesChart expenses={filteredExpenses} />
         <ExpensesList items={filteredExpenses} />
         {/* {filteredExpenses.length === 0 && <p>No expenses recorded</p>}
         {filteredExpenses.lenght > 0 && 
